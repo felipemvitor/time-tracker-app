@@ -1,0 +1,90 @@
+[
+  {
+    "name": "Project",
+    "dateStart": 10,
+    "dateEnd": 20,
+    "category": {
+      "id": 3
+    }
+  },
+  {
+    "name": "Shower",
+    "dateStart": 10,
+    "dateEnd": 20,
+    "category": {
+      "id": 6
+    }
+  },
+  {
+    "name": "Sleep",
+    "dateStart": 10,
+    "dateEnd": 20,
+    "category": {
+      "id": 1
+    }
+  },
+  {
+    "name": "Dishes",
+    "dateStart": 10,
+    "dateEnd": 20,
+    "category": {
+      "id": 5
+    }
+  },
+  {
+    "name": "Company Work",
+    "dateStart": 10,
+    "dateEnd": 20,
+    "category": {
+      "id": 2
+    }
+  },
+  {
+    "name": "Lunch",
+    "dateStart": 10,
+    "dateEnd": 20,
+    "category": {
+      "id": 6
+    }
+  },
+  {
+    "name": "Dishes",
+    "dateStart": 10,
+    "dateEnd": 20,
+    "category": {
+      "id": 5
+    }
+  },
+  {
+    "name": "Project",
+    "dateStart": 10,
+    "dateEnd": 20,
+    "category": {
+      "id": 3
+    }
+  },
+  {
+    "name": "Company Work",
+    "dateStart": 10,
+    "dateEnd": 20,
+    "category": {
+      "id": 2
+    }
+  },
+  {
+    "name": "Reading",
+    "dateStart": 10,
+    "dateEnd": 20,
+    "category": {
+      "id": 6
+    }
+  },
+  {
+    "name": "Project",
+    "dateStart": 10,
+    "dateEnd": 20,
+    "category": {
+      "id": 3
+    }
+  }
+]
