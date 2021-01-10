@@ -1,10 +1,10 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:time_tracker_flutter_app/model/Category.dart';
-import 'package:time_tracker_flutter_app/view/widgets/CategoryItem.dart';
-
 import 'package:flutter/services.dart' show rootBundle;
+import 'package:time_tracker_flutter_app/model/Category.dart';
+
+import 'view/widgets/CategoryItem.dart';
 
 void main() {
   runApp(MyApp());
@@ -19,15 +19,13 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
+  MyHomePage({Key key}) : super(key: key);
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -48,20 +46,40 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    AppBar appBar = AppBar(
+      title: Text('Time Tracker'),
+    );
+
     loadCategories();
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: ListView.separated(
-        itemCount: _categories.length,
-        itemBuilder: (BuildContext context, int index) {
-          return CategoryItem(_categories[index], Icons.category);
-        },
-        separatorBuilder: (BuildContext context, int index){
-          return const Divider();
-        },
+      appBar: appBar,
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Padding(
+            padding:
+                const EdgeInsets.all(16.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('Name'),
+                Text('Weekly Goal'),
+              ],
+            ),
+          ),
+          Expanded(
+            child: ListView.separated(
+              itemCount: _categories.length,
+              itemBuilder: (BuildContext context, int index) {
+                return CategoryItem(_categories[index], Icons.category);
+              },
+              separatorBuilder: (BuildContext context, int index) {
+                return const Divider();
+              },
+            ),
+          ),
+        ],
       ),
     );
   }
