@@ -1,10 +1,7 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart' show rootBundle;
-import 'package:time_tracker_flutter_app/model/Category.dart';
 
-import 'view/widgets/CategoryItem.dart';
+import 'package:time_tracker_flutter_app/view/screens/CategoriesScreen.dart';
+import 'package:time_tracker_flutter_app/view/widgets/DrawerItem.dart';
 
 void main() {
   runApp(MyApp());
@@ -32,55 +29,39 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  List<Category> _categories = [];
-
-  Future<List<Category>> loadCategories() async {
-    String json = await rootBundle.loadString('assets/data/categories.json');
-
-    var list = jsonDecode(json) as List;
-    var categories = list.map((item) => Category.fromJson(item)).toList();
-    setState(() {
-      _categories = categories;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     AppBar appBar = AppBar(
       title: Text('Time Tracker'),
     );
 
-    loadCategories();
-
     return Scaffold(
       appBar: appBar,
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Padding(
-            padding:
-                const EdgeInsets.all(16.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text('Name'),
-                Text('Weekly Goal'),
-              ],
-            ),
-          ),
-          Expanded(
-            child: ListView.separated(
-              itemCount: _categories.length,
-              itemBuilder: (BuildContext context, int index) {
-                return CategoryItem(_categories[index], Icons.category);
-              },
-              separatorBuilder: (BuildContext context, int index) {
-                return const Divider();
-              },
-            ),
-          ),
-        ],
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
       ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            DrawerHeader(
+              padding: EdgeInsets.all(20.0),
+              child: Center(
+                child: Text(
+                  'Time Tracker',
+                  style: TextStyle(fontSize: 24.0, color: Colors.white),
+                ),
+              ),
+              decoration: BoxDecoration(color: Colors.blue),
+            ),
+            DrawerItem('Dashboard', Icons.dashboard, () {}, true),
+            DrawerItem('Activities', Icons.local_activity, () {}, false),
+            DrawerItem('Categories', Icons.category, () {}, false),
+            DrawerItem('Goals', Icons.star, () {}, false),
+          ],
+        ),
+      ),
+      body: CategoriesScreen(),
     );
   }
 }
