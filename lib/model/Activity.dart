@@ -1,4 +1,4 @@
-import 'package:time_tracker_flutter_app/model/Category.dart';
+import '../model/Category.dart';
 
 class Activity {
   int id;

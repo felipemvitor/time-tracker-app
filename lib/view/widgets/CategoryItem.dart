@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:time_tracker_flutter_app/model/Category.dart';
-import 'package:time_tracker_flutter_app/util/DateTimeFormatter.dart';
+
+import '../../model/Category.dart';
+import '../../util/DateTimeFormatter.dart';
 
 class CategoryItem extends StatelessWidget {
   final Category category;
