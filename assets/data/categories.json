@@ -3,36 +3,42 @@
     "id": 1,
     "name": "Sleep",
     "weeklyGoal": 49,
-    "wowGoalMultiplier": 2.0
+    "wowGoalMultiplier": 2.0,
+    "icon": 49
   },
   {
     "id": 2,
     "name": "Work",
     "weeklyGoal": 54,
-    "wowGoalMultiplier": 2.0
+    "wowGoalMultiplier": 2.0,
+    "icon": 46
   },
   {
     "id": 3,
     "name": "Study",
     "weeklyGoal": 28,
-    "wowGoalMultiplier": 2.0
+    "wowGoalMultiplier": 2.0,
+    "icon": 36
   },
   {
     "id": 4,
     "name": "Leisure",
     "weeklyGoal": 4,
-    "wowGoalMultiplier": 2.0
+    "wowGoalMultiplier": 2.0,
+    "icon": 50
   },
   {
     "id": 5,
     "name": "House Work",
     "weeklyGoal": 12,
-    "wowGoalMultiplier": 2.0
+    "wowGoalMultiplier": 2.0,
+    "icon": 51
   },
   {
     "id": 6,
     "name": "Breaks",
     "weeklyGoal": 21,
-    "wowGoalMultiplier": 2.0
+    "wowGoalMultiplier": 2.0,
+    "icon": 48
   }
 ]

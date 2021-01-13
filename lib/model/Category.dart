@@ -1,10 +1,14 @@
+import '../model/enum/CategoryIcon.dart';
+
 class Category {
   int id;
   String name;
   int weeklyGoal;
   double wowGoalMultiplier;
+  CategoryIcon icon;
 
-  Category(this.id, this.name, this.weeklyGoal, this.wowGoalMultiplier);
+  Category(
+      this.id, this.name, this.weeklyGoal, this.wowGoalMultiplier, this.icon);
 
   @override
   String toString() {
@@ -13,6 +17,6 @@ class Category {
 
   factory Category.fromJson(dynamic json) {
     return Category(json['id'], json['name'], json['weeklyGoal'],
-        json['wowGoalMultiplier']);
+        json['wowGoalMultiplier'], CategoryIcon.getElementAt(json['icon']));
   }
 }

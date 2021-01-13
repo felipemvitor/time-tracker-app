@@ -95,76 +95,95 @@ class CategoryIcon<int, String> extends Enum<int, String, IconData> {
       const CategoryIcon(45, "wine_bar", Icons.wine_bar);
   static const CategoryIcon WORK = const CategoryIcon(46, "work", Icons.work);
   static const CategoryIcon WORKSPACES_FILLED =
-      const CategoryIcon(47, "", Icons.workspaces_filled);
+      const CategoryIcon(47, "workspaces_filled", Icons.workspaces_filled);
+  static const CategoryIcon RESTAURANT =
+      const CategoryIcon(48, "restaurant", Icons.restaurant);
+  static const CategoryIcon NIGHTS_STAY =
+      const CategoryIcon(49, "nights_stay", Icons.nights_stay);
+  static const CategoryIcon VIDEO_GAME_ASSET =
+      const CategoryIcon(50, "video_game_asset", Icons.videogame_asset);
+  static const CategoryIcon HOUSE =
+      const CategoryIcon(51, "house", Icons.house);
+  static const CategoryIcon HOME = const CategoryIcon(52, "home", Icons.home);
+  static const CategoryIcon BOOK = const CategoryIcon(53, "book", Icons.book);
+
+  static List<CategoryIcon> values = [
+    DASHBOARD,
+    STAR,
+    CATEGORY,
+    LOCAL_ACTIVITY,
+    MAP,
+    PERSON,
+    SETTINGS,
+    NOTIFICATION,
+    AC_UNIT,
+    ACCESS_ALARM,
+    ACCESS_TIME,
+    BALANCE,
+    ACCOUNT_TREE,
+    AIRPLANE_MODE_ACTIVE,
+    AIRPORT_SHUTTLE,
+    ALBUM,
+    ALL_INBOX,
+    ALL_INCLUSIVE,
+    ALTERNATE_EMAIL,
+    ANALYTICS,
+    ANCHOR,
+    ANDROID,
+    APARTMENT,
+    APP_REGISTRATION,
+    APPS,
+    APPROVAL,
+    ARCHITECTURE,
+    ART_TRACK,
+    ARTICLE,
+    ASSESSMENT,
+    ASSIGNMENT,
+    ASSISTANT_NAVIGATION,
+    ASSISTANT_PHOTO,
+    ATTACH_FILE,
+    AUDIO_TRACK,
+    AUTO_AWESOME,
+    AUTO_STORIES,
+    BALLOT,
+    BAR_CHART,
+    BATHTUB,
+    WARNING_AMBER_OUTLINED,
+    WAVES,
+    WB_INCANDESCENT,
+    WEEKEND,
+    WHATS_HOT,
+    WINE_BAR,
+    WORK,
+    WORKSPACES_FILLED,
+    RESTAURANT,
+    NIGHTS_STAY,
+    VIDEO_GAME_ASSET,
+    HOUSE,
+    HOME,
+    BOOK
+  ];
 
   @override
-  List<CategoryIcon> values() {
-    return [
-      DASHBOARD,
-      STAR,
-      CATEGORY,
-      LOCAL_ACTIVITY,
-      MAP,
-      PERSON,
-      SETTINGS,
-      NOTIFICATION,
-      AC_UNIT,
-      ACCESS_ALARM,
-      ACCESS_TIME,
-      BALANCE,
-      ACCOUNT_TREE,
-      AIRPLANE_MODE_ACTIVE,
-      AIRPORT_SHUTTLE,
-      ALBUM,
-      ALL_INBOX,
-      ALL_INCLUSIVE,
-      ALTERNATE_EMAIL,
-      ANALYTICS,
-      ANCHOR,
-      ANDROID,
-      APARTMENT,
-      APP_REGISTRATION,
-      APPS,
-      APPROVAL,
-      ARCHITECTURE,
-      ART_TRACK,
-      ARTICLE,
-      ASSESSMENT,
-      ASSIGNMENT,
-      ASSISTANT_NAVIGATION,
-      ASSISTANT_PHOTO,
-      ATTACH_FILE,
-      AUDIO_TRACK,
-      AUTO_AWESOME,
-      AUTO_STORIES,
-      BALLOT,
-      BAR_CHART,
-      BATHTUB,
-      WARNING_AMBER_OUTLINED,
-      WAVES,
-      WB_INCANDESCENT,
-      WEEKEND,
-      WHATS_HOT,
-      WINE_BAR,
-      WORK,
-      WORKSPACES_FILLED
-    ];
+  static List<CategoryIcon> getValues() {
+    return values;
   }
 
   @override
   bool equals(Enum e) {
     return index == e.index;
   }
+
+  static getElementAt(id) {
+    if (id == null || id < 0 || id > values.length) return null;
+    return values[id];
+  }
 }
 
 abstract class Enum<int, String, IconData> {
   final int index;
   final String name;
-  final IconData icon;
+  final IconData data;
 
-  const Enum(this.index, this.name, this.icon);
-
-  List<Enum> values();
-
-  bool equals(Enum e);
+  const Enum(this.index, this.name, this.data);
 }

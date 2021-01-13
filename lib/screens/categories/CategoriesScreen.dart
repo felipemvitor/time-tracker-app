@@ -50,7 +50,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
               child: ListView.separated(
             itemCount: _categories.length,
             itemBuilder: (BuildContext context, int index) {
-              return CategoryItem(_categories[index], Icons.category);
+              return CategoryItem(_categories[index]);
             },
             separatorBuilder: (BuildContext context, int index) {
               return const Divider();
