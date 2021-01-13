@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../model/Category.dart';
-import '../../util/DateTimeFormatter.dart';
+import '../../../model/Category.dart';
+import '../../../util/DateTimeFormatter.dart';
 
 class CategoryItem extends StatelessWidget {
   final Category category;

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import './DrawerItem.dart';
-import '../../../model/NavigationRoute.dart';
+import '../../model/NavigationRoute.dart';
+import 'DrawerItem.dart';
 
 class NavigationDrawer extends StatelessWidget {
   final NavigationRoute _route;

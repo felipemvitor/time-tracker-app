@@ -3,10 +3,10 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
+import 'components/CategoryItem.dart';
+import '../../components/drawer/NavigationDrawer.dart';
 import '../../model/Category.dart';
 import '../../model/NavigationRoute.dart';
-import '../../view/widgets/drawer/NavigationDrawer.dart';
-import '../widgets/CategoryItem.dart';
 
 class CategoriesScreen extends StatefulWidget {
   @override

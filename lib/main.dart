@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:time_tracker_flutter_app/model/NavigationRoute.dart';
 
-import 'package:time_tracker_flutter_app/view/screens/ActivitiesScreen.dart';
-import 'package:time_tracker_flutter_app/view/screens/CategoriesScreen.dart';
-import 'package:time_tracker_flutter_app/view/screens/DashboardScreen.dart';
-import 'package:time_tracker_flutter_app/view/screens/GoalsScreen.dart';
+import 'screens/activities/ActivitiesScreen.dart';
+import 'screens/categories/CategoriesScreen.dart';
+import 'screens/dashboard/DashboardScreen.dart';
+import 'screens/goals/GoalsScreen.dart';
 
 void main() => runApp(MyApp());
 

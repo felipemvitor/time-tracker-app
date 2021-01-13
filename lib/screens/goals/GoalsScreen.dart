@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../components/drawer/NavigationDrawer.dart';
 import '../../model/NavigationRoute.dart';
-import '../../view/widgets/drawer/NavigationDrawer.dart';
 
 class GoalsScreen extends StatefulWidget {
   @override
