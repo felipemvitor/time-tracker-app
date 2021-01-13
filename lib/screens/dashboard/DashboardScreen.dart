@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../components/drawer/NavigationDrawer.dart';
-import '../../model/NavigationRoute.dart';
+import '../../model/enum/NavigationRoute.dart';
 
 class DashboardScreen extends StatefulWidget {
   @override

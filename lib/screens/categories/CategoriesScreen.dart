@@ -6,7 +6,7 @@ import 'package:flutter/services.dart' show rootBundle;
 import 'components/CategoryItem.dart';
 import '../../components/drawer/NavigationDrawer.dart';
 import '../../model/Category.dart';
-import '../../model/NavigationRoute.dart';
+import '../../model/enum/NavigationRoute.dart';
 
 class CategoriesScreen extends StatefulWidget {
   @override

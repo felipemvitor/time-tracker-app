@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:time_tracker_flutter_app/model/NavigationRoute.dart';
+import 'file:///E:/Time%20Tracker/time_tracker_flutter_app/lib/model/enum/NavigationRoute.dart';
 
 import 'screens/activities/ActivitiesScreen.dart';
 import 'screens/categories/CategoriesScreen.dart';
