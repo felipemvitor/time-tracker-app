@@ -16,7 +16,10 @@ class CategoryItem extends StatelessWidget {
       leading: CircleAvatar(
         child: category.icon != null ? Icon(category.icon.data) : null,
       ),
-      trailing: Text(DateTimeFormatter.formatDuration(category.weeklyGoal)),
+      trailing: Text(
+        DateTimeFormatter.formatDuration(category.weeklyGoal),
+        style: Theme.of(context).textTheme.subtitle1,
+      ),
     );
   }
 }
