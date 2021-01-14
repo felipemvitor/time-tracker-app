@@ -10,7 +10,7 @@ class NavigationDrawer extends StatelessWidget {
 
   _onDrawerItemSelected(BuildContext context, NavigationRoute destination) {
     Navigator.of(context).pop();
-    Navigator.pushReplacementNamed(context, destination.name);
+    Navigator.pushNamed(context, destination.name);
   }
 
   @override

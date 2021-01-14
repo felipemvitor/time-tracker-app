@@ -3,10 +3,11 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
-import 'components/CategoryItem.dart';
 import '../../components/drawer/NavigationDrawer.dart';
 import '../../model/Category.dart';
 import '../../model/enum/NavigationRoute.dart';
+import '../../screens/categories/CreateCategoriesScreen.dart';
+import 'components/CategoryItem.dart';
 
 class CategoriesScreen extends StatefulWidget {
   @override
@@ -57,6 +58,18 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
             },
           ))
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed: () => Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => CreateCategoriesScreen(),
+            settings: RouteSettings(
+              arguments: null,
+            ),
+          ),
+        ),
       ),
     );
   }

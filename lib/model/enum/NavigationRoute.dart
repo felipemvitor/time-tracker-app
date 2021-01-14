@@ -5,6 +5,7 @@ class NavigationRoute<int, String> extends Enum<int, String> {
   static const NavigationRoute ACTIVITIES = const NavigationRoute(1, "/activities");
   static const NavigationRoute CATEGORIES = const NavigationRoute(2, "/categories");
   static const NavigationRoute GOALS = const NavigationRoute(3, "/goals");
+  static const NavigationRoute CREATE_CATEGORIES = const NavigationRoute(0, "create-categories");
 
   bool equals(NavigationRoute routes) {
     return index == routes.index;
