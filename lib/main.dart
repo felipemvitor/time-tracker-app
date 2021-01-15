@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:time_tracker_flutter_app/styles/Theme.dart';
 
 import './util/Routes.dart';
 import 'screens/dashboard/DashboardScreen.dart';
@@ -11,15 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(
-        scaffoldBackgroundColor: Color(0xFF131C21),
-        textTheme: TextTheme(
-          subtitle1: TextStyle(color: Colors.white70)
-        ),
-        appBarTheme: AppBarTheme(
-          color: Color(0xFF2A2F32),
-        ),
-      ),
+      theme: theme,
       home: DashboardScreen(),
       routes: routes,
     );

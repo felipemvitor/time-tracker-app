@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../../components/text/EditText.dart';
 import '../../model/Category.dart';
+import '../../styles/ProjectColors.dart';
 
 class CreateCategoriesScreen extends StatefulWidget {
   @override
@@ -19,25 +21,27 @@ class _CreateCategoriesScreenState extends State<CreateCategoriesScreen> {
       appBar: AppBar(
         title: Text(title),
         leading: IconButton(
-          icon: Icon(
-            Icons.arrow_back,
-            color: Colors.white,
-          ),
+          icon: Icon(Icons.arrow_back, color: ProjectColors.white1),
           onPressed: () {
             Navigator.of(context).pop();
           },
         ),
         actions: [
           IconButton(
-            icon: Icon(
-              Icons.save,
-              color: Colors.white,
-            ),
+            icon: Icon(Icons.save, color: ProjectColors.white1),
             onPressed: () {},
           )
         ],
       ),
-      body: Container(),
+      body: Container(
+        padding: EdgeInsets.all(24.0),
+        child: Column(
+          children: [
+            EditText('Label'),
+            EditText('Label', margin: EdgeInsets.only(top: 16.0))
+          ],
+        ),
+      ),
     );
   }
 }

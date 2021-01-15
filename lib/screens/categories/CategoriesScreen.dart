@@ -42,14 +42,9 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
-                  'Name',
-                  style: Theme.of(context).textTheme.subtitle1,
-                ),
-                Text(
-                  'Weekly Goal',
-                  style: Theme.of(context).textTheme.subtitle1,
-                ),
+                Text('Name', style: Theme.of(context).textTheme.subtitle1),
+                Text('Weekly Goal',
+                    style: Theme.of(context).textTheme.subtitle1),
               ],
             ),
           ),
