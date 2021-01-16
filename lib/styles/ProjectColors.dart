@@ -8,5 +8,6 @@ class ProjectColors {
 
   static const red1 = const Color(0xFFFD413C);
 
-  static const white1 = const Color(0xB3FFFFFF);
+  static const white1 = const Color(0xFFFFFFFF);
+  static const white2 = const Color(0xB3FFFFFF);
 }

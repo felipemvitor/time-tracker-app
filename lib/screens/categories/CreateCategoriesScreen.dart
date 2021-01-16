@@ -10,6 +10,9 @@ class CreateCategoriesScreen extends StatefulWidget {
 }
 
 class _CreateCategoriesScreenState extends State<CreateCategoriesScreen> {
+  String _name = '';
+  String _goal = '';
+
   @override
   Widget build(BuildContext context) {
     final Category category = ModalRoute.of(context).settings.arguments;
@@ -17,18 +20,21 @@ class _CreateCategoriesScreenState extends State<CreateCategoriesScreen> {
     final String title =
         category == null ? 'Create categories' : 'Edit categories';
 
+    Function setName = (name) => setState(() => _name = name);
+    Function setGoal = (goal) => setState(() => _goal = goal);
+
     return Scaffold(
       appBar: AppBar(
         title: Text(title),
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: ProjectColors.white1),
+          icon: Icon(Icons.arrow_back, color: ProjectColors.white2),
           onPressed: () {
             Navigator.of(context).pop();
           },
         ),
         actions: [
           IconButton(
-            icon: Icon(Icons.save, color: ProjectColors.white1),
+            icon: Icon(Icons.save, color: ProjectColors.white2),
             onPressed: () {},
           )
         ],
@@ -37,8 +43,12 @@ class _CreateCategoriesScreenState extends State<CreateCategoriesScreen> {
         padding: EdgeInsets.all(24.0),
         child: Column(
           children: [
-            EditText('Label'),
-            EditText('Label', margin: EdgeInsets.only(top: 16.0))
+            EditText('Name', onChanged: setName),
+            EditText(
+              'Weekly Goal',
+              margin: EdgeInsets.only(top: 32.0),
+              onChanged: setGoal,
+            ),
           ],
         ),
       ),
