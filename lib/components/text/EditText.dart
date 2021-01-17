@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:time_tracker_flutter_app/components/text/Label.dart';
 
 import '../../styles/ProjectColors.dart';
 
@@ -24,7 +25,7 @@ class EditText extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(label, style: Theme.of(context).textTheme.subtitle2),
+          Label(label),
           Container(
             margin: EdgeInsets.only(top: 8),
             child: TextField(

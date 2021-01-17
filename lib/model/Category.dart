@@ -4,19 +4,17 @@ class Category {
   int id;
   String name;
   int weeklyGoal;
-  double wowGoalMultiplier;
   CategoryIcon icon;
 
-  Category(
-      this.id, this.name, this.weeklyGoal, this.wowGoalMultiplier, this.icon);
+  Category(this.id, this.name, this.weeklyGoal, this.icon);
 
   @override
   String toString() {
-    return '{id: $id, name: $name, weeklyGoal: $weeklyGoal, wowGoalMultiplier: $wowGoalMultiplier}';
+    return '{id: $id, name: $name, weeklyGoal: $weeklyGoal}';
   }
 
   factory Category.fromJson(dynamic json) {
     return Category(json['id'], json['name'], json['weeklyGoal'],
-        json['wowGoalMultiplier'], CategoryIcon.getElementAt(json['icon']));
+        CategoryIcon.getElementAt(json['icon']));
   }
 }
