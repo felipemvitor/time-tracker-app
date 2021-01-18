@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:time_tracker_flutter_app/components/text/Label.dart';
+import 'package:flutter/services.dart';
 
+import '../../components/text/Label.dart';
 import '../../styles/ProjectColors.dart';
 
 class EditText extends StatelessWidget {
@@ -9,13 +10,18 @@ class EditText extends StatelessWidget {
   final EdgeInsetsGeometry margin;
   final TextEditingController controller;
   final Function onChanged;
+  final TextInputType keyboardType;
 
-  EditText(this.label, {this.margin, this.controller, this.onChanged});
+  EditText(
+    this.label, {
+    this.margin,
+    this.controller,
+    this.onChanged,
+    this.keyboardType,
+  });
 
   final border = OutlineInputBorder(
-    borderSide: BorderSide(
-      color: ProjectColors.white2,
-    ),
+    borderSide: BorderSide(color: ProjectColors.white2, width: 2.0),
   );
 
   @override
@@ -29,6 +35,7 @@ class EditText extends StatelessWidget {
           Container(
             margin: EdgeInsets.only(top: 8),
             child: TextField(
+              keyboardType: keyboardType,
               onChanged: this.onChanged,
               controller: controller,
               textCapitalization: TextCapitalization.sentences,

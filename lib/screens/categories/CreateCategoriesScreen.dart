@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:time_tracker_flutter_app/components/text/Label.dart';
-import 'package:time_tracker_flutter_app/styles/Dimensions.dart';
 
 import '../../components/text/EditText.dart';
 import '../../model/Category.dart';
+import '../../screens/categories/components/CategoryIconButton.dart';
 import '../../styles/ProjectColors.dart';
 
 class CreateCategoriesScreen extends StatefulWidget {
@@ -65,50 +63,8 @@ class _CreateCategoriesScreenState extends State<CreateCategoriesScreen> {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Label('Icon'),
-                      Container(
-                        margin: EdgeInsets.only(top: 8),
-                        child: InkWell(
-                          onTap: () {},
-                          borderRadius: BorderRadius.all(Radius.circular(4)),
-                          splashColor: Colors.black12,
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Icon(
-                              Icons.category,
-                              color: Colors.white70,
-                              size: 32,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Label('Color'),
-                      Container(
-                        margin: EdgeInsets.only(top: 8),
-                        child: InkWell(
-                          onTap: () {},
-                          borderRadius: BorderRadius.all(Radius.circular(4)),
-                          splashColor: Colors.black12,
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Icon(
-                              Icons.palette,
-                              color: Colors.white70,
-                              size: 32,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+                  CategoryIconButton('Icon', Icons.category, Colors.white),
+                  CategoryIconButton('Color', Icons.palette, Colors.white),
                   SizedBox(
                     width: size.width -
                         2 * screenPadding -
@@ -118,6 +74,7 @@ class _CreateCategoriesScreenState extends State<CreateCategoriesScreen> {
                       'Weekly Goal',
                       margin: EdgeInsets.only(top: 32.0),
                       onChanged: setGoal,
+                      keyboardType: TextInputType.number,
                     ),
                   ),
                 ],
