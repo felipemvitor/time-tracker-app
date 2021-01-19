@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../../components/text/Label.dart';
+import '../../styles/Dimensions.dart';
 import '../../styles/ProjectColors.dart';
 
 class EditText extends StatelessWidget {
@@ -21,7 +22,10 @@ class EditText extends StatelessWidget {
   });
 
   final border = OutlineInputBorder(
-    borderSide: BorderSide(color: ProjectColors.white2, width: 2.0),
+    borderSide: BorderSide(
+      color: ProjectColors.white2,
+      width: Dimensions.width.border,
+    ),
   );
 
   @override
@@ -33,17 +37,20 @@ class EditText extends StatelessWidget {
         children: [
           Label(label),
           Container(
-            margin: EdgeInsets.only(top: 8),
+            margin: Dimensions.margin.componentWithLabel,
             child: TextField(
               keyboardType: keyboardType,
               onChanged: this.onChanged,
               controller: controller,
               textCapitalization: TextCapitalization.sentences,
-              style: TextStyle(color: ProjectColors.white1, fontSize: 18),
+              style: TextStyle(
+                color: ProjectColors.white1,
+                fontSize: Dimensions.fontSize.textField,
+              ),
               decoration: InputDecoration(
                 filled: true,
                 fillColor: ProjectColors.black1,
-                contentPadding: EdgeInsets.symmetric(horizontal: 8.0),
+                contentPadding: Dimensions.padding.textField,
                 border: border,
                 enabledBorder: border,
               ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../model/Category.dart';
 import '../../../util/DateTimeFormatter.dart';
+import '../../../styles/Dimensions.dart';
 
 class CategoryItem extends StatelessWidget {
   final Category category;
@@ -11,8 +12,9 @@ class CategoryItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      onTap: (){},
       title: Text(category.name),
-      // subtitle: Text(this.category.weeklyGoal.toString()),
+      contentPadding: Dimensions.padding.categoryItem,
       leading: CircleAvatar(
         child: category.icon != null ? Icon(category.icon.data) : null,
       ),

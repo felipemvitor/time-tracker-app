@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import '../../styles/ProjectColors.dart';
+import '../../styles/Dimensions.dart';
 
 import '../../model/enum/NavigationRoute.dart';
-import 'DrawerItem.dart';
+import './DrawerItem.dart';
 
 class NavigationDrawer extends StatelessWidget {
   final NavigationRoute _route;
@@ -18,26 +20,26 @@ class NavigationDrawer extends StatelessWidget {
     return SafeArea(
       child: Drawer(
         child: Container(
-          color: Color(0xFF2A2F32),
+          color: ProjectColors.black1,
           child: ListView(
-            padding: EdgeInsets.zero,
+            padding: Dimensions.margin.drawerHeader,
             children: [
               DrawerHeader(
-                margin: EdgeInsets.zero,
-                padding: EdgeInsets.zero,
+                margin: Dimensions.margin.drawerHeader,
+                padding: Dimensions.padding.drawerHeader,
                 child: Container(
-                  color: Color(0xFF2A2F32),
+                  color: ProjectColors.black1,
                   child: Center(
                     child: Text(
                       'Time Tracker',
                       style: TextStyle(
-                        fontSize: 24.0,
-                        color: Colors.white,
+                        fontSize: Dimensions.fontSize.drawerHeader,
+                        color: ProjectColors.white1,
                       ),
                     ),
                   ),
                 ),
-                decoration: BoxDecoration(color: Colors.white),
+                decoration: BoxDecoration(color: ProjectColors.white1),
               ),
               DrawerItem(
                 'Dashboard',

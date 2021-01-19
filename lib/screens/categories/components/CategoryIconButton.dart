@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../components/text/Label.dart';
+import '../../../styles/Dimensions.dart';
 import '../../../styles/ProjectColors.dart';
 
 class CategoryIconButton extends StatelessWidget {
@@ -17,25 +18,26 @@ class CategoryIconButton extends StatelessWidget {
       children: [
         Label(label),
         Container(
-          margin: EdgeInsets.only(top: 8.0),
+          margin: Dimensions.margin.componentWithLabel,
           child: Ink(
-              decoration: BoxDecoration(
-                border: Border.all(
-                  width: 1,
-                  color: ProjectColors.white1,
-                ),
-                borderRadius: BorderRadius.all(Radius.circular(4.0)),
-                color: ProjectColors.black1,
+            decoration: BoxDecoration(
+              border: Border.all(
+                width: Dimensions.width.border,
+                color: ProjectColors.white1,
               ),
-              child: InkWell(
-                  customBorder: RoundedRectangleBorder(
-                    side: BorderSide(width: 1, color: Colors.red),
-                  ),
-                  onTap: () {},
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Icon(icon, color: ProjectColors.white2, size: 30),
-                  ))),
+              borderRadius: Dimensions.borderRadius.textField,
+              color: ProjectColors.black1,
+            ),
+            child: InkWell(
+              onTap: () {},
+              child: Padding(
+                padding: Dimensions.padding.categoryIcon,
+                child: Icon(icon,
+                    color: ProjectColors.white2,
+                    size: Dimensions.iconSize.button),
+              ),
+            ),
+          ),
         )
       ],
     );

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../../styles/ProjectColors.dart';
+import '../../styles/Dimensions.dart';
 
 class DrawerItem extends StatelessWidget {
   final String title;
@@ -11,23 +13,20 @@ class DrawerItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(right: 8),
+      margin: Dimensions.margin.drawerItem,
       decoration: BoxDecoration(
-          color: selected ? Color(0xFF131C21) : Color(0xFF2A2F32),
-          borderRadius: BorderRadius.only(
-              topRight: Radius.circular(16), bottomRight: Radius.circular(16))),
+          color: selected ? ProjectColors.black2 : ProjectColors.black1,
+          borderRadius: Dimensions.borderRadius.drawerItem),
       child: InkWell(
         onTap: onTap,
-        borderRadius: BorderRadius.only(
-            topRight: Radius.circular(40), bottomRight: Radius.circular(40)),
-        splashColor: Colors.black12,
+        borderRadius: Dimensions.borderRadius.drawerItem,
+        splashColor: ProjectColors.black1,
         child: ListTile(
-          // tileColor: selected ? Colors.blue : Color(0xFF2A2F32),
           title: Text(
             title,
-            style: TextStyle(color: Colors.white70),
+            style: TextStyle(color: ProjectColors.white2),
           ),
-          leading: Icon(icon, color: Colors.white70),
+          leading: Icon(icon, color: ProjectColors.white2),
         ),
       ),
     );

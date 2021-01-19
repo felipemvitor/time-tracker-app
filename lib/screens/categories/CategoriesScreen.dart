@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
+import 'package:time_tracker_flutter_app/styles/Dimensions.dart';
 
 import '../../components/drawer/NavigationDrawer.dart';
 import '../../model/Category.dart';
@@ -38,7 +39,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
       body: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: Dimensions.padding.body,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
